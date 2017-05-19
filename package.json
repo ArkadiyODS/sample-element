@@ -1,5 +1,9 @@
 {
-"scripts": {
-    "test": "./node_modules/.bin/wct"
+  "scripts": {
+    "test": "wct"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0",
+    "web-component-tester-istanbul": "^0.10.0"
   }
 }
