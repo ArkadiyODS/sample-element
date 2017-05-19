@@ -1,0 +1,30 @@
+<link rel="import" href="../simple-element.html">
+
+<dom-module id="demo-component">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+  <simple-element prop1="{{ data }}"></simple-element>
+
+  </template>
+  <script>
+    class DemoComponent extends Polymer.Element {
+      static get is() { return 'demo-component'; }
+
+      static get properties() {
+        return {
+          data: {
+            type: String,
+            value: 'This is demo component'
+          },
+        };
+      }
+    }
+
+    window.customElements.define(DemoComponent.is, DemoComponent);
+  </script>
+</dom-module>

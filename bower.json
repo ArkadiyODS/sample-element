@@ -1,0 +1,12 @@
+{
+  "name": "simple-element",
+  "main": "simple-element.html",
+  "dependencies": {
+    "polymer": "2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0"
+  }
+}
+
+

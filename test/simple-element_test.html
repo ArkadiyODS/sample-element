@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>simple-element test</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+    <!--<link rel="import" href="../bower_components/test-fixture/test-fixture.html">-->
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../simple-element.html">
+  </head>
+  <body>
+
+    <test-fixture id="simple-element-fixture">
+      <template>
+        <simple-element></simple-element>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('simple-element', function() {
+        let element;
+
+        setup(function() {
+        element = fixture('simple-element-fixture');
+    });
+
+        test('instantiating the element with default properties works', function() {
+          assert.equal(element.prop1, 'simple-element');
+          var elementShadowRoot = element.shadowRoot;
+          var elementHeader = elementShadowRoot.querySelector('h2');
+          assert.equal(elementHeader.innerHTML, 'Hello simple-element!');
+        });
+
+        test('setting a property on the element works', function() {
+          element.setAttribute('prop1','new-prop1');
+          assert.equal(element.prop1, 'new-prop1');
+          var elementShadowRoot = element.shadowRoot;
+          var elementHeader = elementShadowRoot.querySelector('h2');
+          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
+        });
+      });
+    </script>
+
+  </body>
+</html>

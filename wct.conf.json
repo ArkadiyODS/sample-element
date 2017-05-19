@@ -1,0 +1,22 @@
+{
+  "plugins": {
+    "local": {
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
+    },
+    "istanbul": {
+      "dir": "./test/coverage",
+      "reporters": ["text-summary", "lcov"],
+      "include": [
+        "**/*.html",
+        "**/*.js"
+      ],
+      "exclude": [
+        "**/bower_components/**/*",
+        "**/test/*.html"
+      ]
+    }
+  }
+}
